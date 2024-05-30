@@ -13,6 +13,9 @@ import BarChart from "../../components/BarChart";
 import StatBox from "../../components/StatBox";
 import ProgressCircle from "../../components/ProgressCircle";
 
+//Dashboard functional component return the structure and content of dashboard
+// header with title and download reports button, grid of charts and statistics 
+// represented by various custom components and a list of recent transactions
 const Dashboard = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
@@ -183,6 +186,8 @@ const Dashboard = () => {
               Recent Transactions
             </Typography>
           </Box>
+          {/* map mockTransactions data to a set of Box components.
+              demonstrates how data can be dynamically renderred in React */}
           {mockTransactions.map((transaction, i) => (
             <Box
               key={`${transaction.txId}-${i}`}

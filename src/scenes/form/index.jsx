@@ -4,6 +4,7 @@ import * as yup from "yup";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Header from "../../components/Header";
 
+
 const initialValues = {
   firstName: "",
   lastName: "",
@@ -28,17 +29,25 @@ const userSchema = yup.object().shape({
   address2: yup.string().required("required"),
 });
 
+//Form component when submitted validated against Yup schema, if valid
+// handleFormSubmit function is called
 const Form = () => {
+  //useMediaQuery determines if the screen width is more than 600px
   const isNonMobile = useMediaQuery("(min-width:600px)");
 
   const handleFormSubmit = (values) => {
     console.log(values);
   };
 
+  // return JSX structure, Formik that takes in props onSubmit, intitial form values, and 
+  //validation schema. Use render prop pattern to provide form state and helper functions
+  // to a function as children
   return (
     <Box m="20px">
       <Header title="CREATE USER" subtitle="Create a New User Profile" />
 
+      {/* render form - props include blur handler, change events, field value, and field name, 
+          error prop, helper text for displaying validation errors */}
       <Formik
         onSubmit={handleFormSubmit}
         initialValues={initialValues}

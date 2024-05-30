@@ -7,6 +7,9 @@ import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { tokens } from "../../theme";
 
+//FAQ functional component return header and accordion components 
+// each Accordion component consists of an AccordionSummary and and AccordionDetails
+//
 const FAQ = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
@@ -15,15 +18,20 @@ const FAQ = () => {
       <Header title="FAQ" subtitle="Frequently Asked Questions Page" />
 
       <Accordion defaultExpanded>
+
+        {/* Accordion Summaries display a question 
+            <ExpandMoreIcon> - icon that can be clicked to expand to reveal results
+            set to be expanded by default, defaultExpanded prop, */}
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
           <Typography color={colors.greenAccent[500]} variant="h5">
             An Important Question
           </Typography>
         </AccordionSummary>
+
+        {/* AccordionDetails display answer to question */}
         <AccordionDetails>
           <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget.
+            Great question!!
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -35,8 +43,7 @@ const FAQ = () => {
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget.
+            That was another great question, good job!
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -48,8 +55,7 @@ const FAQ = () => {
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget.
+            What a great question, thanks!
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -61,8 +67,7 @@ const FAQ = () => {
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget.
+            What a random question!
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -74,8 +79,7 @@ const FAQ = () => {
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget.
+            Is this your last question??
           </Typography>
         </AccordionDetails>
       </Accordion>

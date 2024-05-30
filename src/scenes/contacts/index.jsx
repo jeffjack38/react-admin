@@ -5,6 +5,8 @@ import { mockDataContacts } from "../../data/mockData";
 import Header from "../../components/Header";
 import { useTheme } from "@mui/material";
 
+//Contacts functional component, define columns array - specifies the columns for the data grid,
+//return box component with contact data
 const Contacts = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
@@ -53,6 +55,8 @@ const Contacts = () => {
   ];
 
   return (
+    // return box component wraps everything, first box title and subtitle
+    // second box css rules for header and footer different color than the body
     <Box m="20px">
       <Header title="CONTACTS" subtitle="List of Contacts for Future Reference" />
       <Box

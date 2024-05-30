@@ -16,11 +16,16 @@ import {
 import Header from "../../components/Header";
 import { tokens } from "../../theme";
 
+//Calender functional component store an array that stores the events displayed on calendar
 const Calendar = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+  //useState hook to manage the state of currentEvents
   const [currentEvents, setCurrentEvents] = useState([]);
 
+  //handleDateClick function event handler that is triggered when a date on the calender is clicked
+  // prompts the user to enter a title for a new event
+  // if title is provided adds the new event to the calender
   const handleDateClick = (selected) => {
     const title = prompt("Please enter a new title for your event");
     const calendarApi = selected.view.calendar;
@@ -37,6 +42,9 @@ const Calendar = () => {
     }
   };
 
+  //handleEventClick function event handler that is triggered when an existing event on the 
+  //calendar is clicked. It asks the user to confirm if they want to delete the event,
+  //if confirmed then remove event from calender
   const handleEventClick = (selected) => {
     if (
       window.confirm(
