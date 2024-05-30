@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+# React Admin Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a comprehensive admin dashboard built with React. It leverages Material UI for a clean and modern design and includes various features and components to support various administrative tasks. This was to demonstrate the ability to create a react app with the functionality of a dashboard for internal tools for a company. This application has features such as Light and Dark Mode, 4 different charts, 3 different Data Table Pagers, FAQ PAge, Form Page, and Calendar Integration.
 
-## Available Scripts
+## Tech Stack
 
-In the project directory, you can run:
+This project is built with the following technologies:
 
-### `npm start`
+- **VSCode IDE**: Version: 1.89.1
+  
+- **Node.js**: Version: 18.18.2
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Language**: JavaScript
+  
+- **React**: A JavaScript library for building user interfaces. This project uses functional components and hooks.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Material UI**: A popular React UI framework with reusable components. This project uses the ThemeProvider for theming support and CssBaseline for CSS reset.
 
-### `npm test`
+- **React Router Dom**: A collection of navigational components that compose declaratively with your application. It's used in this project for routing.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Custom Hooks**: This project uses custom hooks like `useMode` for theme and color mode management.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Features
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Theme Support**: The project uses Material UI's ThemeProvider for customizable themes. The current theme and color mode can be accessed and manipulated using the `useMode` hook from the `theme` module.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Routing**: The project uses `react-router-dom` for routing. Each scene (or page) of the application is associated with a specific route.
 
-### `npm run eject`
+- **Global Components**: The `Topbar` and `Sidebar` components are global components that appear on every page.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **Scenes**: The application includes a variety of scenes, each associated with a specific administrative task. These include a dashboard, team management, invoice management, contact management, form creation, calendar, data visualization (bar, line, pie charts), FAQ, and geography.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Getting Started
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+To get started with this project, clone the repository and install the dependencies:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```bash
+git clone <repository-url>
+cd <repository-name>
+npx create-react-app react-admin
+cd react-admin/
+npm install @mui/material @emotion/react @emotion/styled @mui/x-data-grid @mui/icons-material react-router-dom@6 react-pro-sidebar 0.6.0 formik yup @fullcalendar/core \
+  @fullcalendar/daygrid \
+  @fullcalendar/timegrid \
+  @fullcalendar/list @nivo/core @nivo/pie @nivo/line @nivo/bar @nivo/geo
