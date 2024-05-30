@@ -1,8 +1,10 @@
-import { ColorModeContext, useMode} from './theme';
+import { ColorModeContext, useMode } from "./theme";
 // CssBaseline-reset css to default, themeprovide-provide ability to pass themes into mui
-import { CssBaseline, ThemeProvider } from '@mui/material';
-import Topbar from './scenes/global/Topbar';
-import { Route, Routes } from 'react-router-dom';
+import { CssBaseline, ThemeProvider } from "@mui/material";
+import Topbar from "./scenes/global/Topbar";
+import { Route, Routes } from "react-router-dom";
+
+//import all scene components
 import Sidebar from "./scenes/global/Sidebar";
 import Dashboard from "./scenes/dashboard";
 import Team from "./scenes/team";
@@ -16,9 +18,6 @@ import Pie from "./scenes/pie";
 import FAQ from "./scenes/faq";
 import Geography from "./scenes/geography";
 
-
-
-
 function App() {
   //access to theme and colorMode
   const [theme, colorMode] = useMode();
@@ -31,6 +30,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <div className="app">
+          {/* Sidebar componenet, displays on all pages  */}
           <Sidebar />
           <main className="content">
             <Topbar />
@@ -49,7 +49,7 @@ function App() {
             </Routes>
           </main>
         </div>
-        </ThemeProvider>
+      </ThemeProvider>
     </ColorModeContext.Provider>
   );
 }

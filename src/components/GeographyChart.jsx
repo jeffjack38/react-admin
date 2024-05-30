@@ -4,7 +4,11 @@ import { geoFeatures } from "../data/mockGeoFeatures";
 import { tokens } from "../theme";
 import { mockGeographyData as data } from "../data/mockData";
 
+//GeographyChart component functional component that will take in a single prop
+//isDashboard - boolean that defaults to false if not provided
 const GeographyChart = ({ isDashboard = false }) => {
+
+  //useTheme() hook used to access current theme
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   return (

@@ -3,15 +3,23 @@ import { ResponsiveBar } from "@nivo/bar";
 import { tokens } from "../theme";
 import { mockBarData as data } from "../data/mockData";
 
+//  BarChart component accepts a single prop: isDashboard, 
+//which defaults to false if not provided. Inside the component, 
+//the useTheme hook is used to get the current theme, and 
+//the tokens function is used to get the color tokens based on the theme's mode.
 const BarChart = ({ isDashboard = false }) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
   return (
+    // component that renders the bar chart, accepts different props for custom appearance
+    // and behavior of chart
     <ResponsiveBar
+      // data prop from mockData mockBarChart
       data={data}
+      
+      //theme prop - customizes the colors of the different parts of the chart
       theme={{
-        // added
         axis: {
           domain: {
             line: {
@@ -39,6 +47,8 @@ const BarChart = ({ isDashboard = false }) => {
           },
         },
       }}
+
+      //keys prop
       keys={["hot dog", "burger", "sandwich", "kebab", "fries", "donut"]}
       indexBy="country"
       margin={{ top: 50, right: 130, bottom: 50, left: 60 }}

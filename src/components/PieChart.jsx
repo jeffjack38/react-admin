@@ -3,10 +3,14 @@ import { tokens } from "../theme";
 import { useTheme } from "@mui/material";
 import { mockPieData as data } from "../data/mockData";
 
+//PieChart functional component that won't take any props,
+//return ResponsivePie
 const PieChart = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   return (
+
+    //ResponsivePie component returned, take in props to customize pie chart
     <ResponsivePie
       data={data}
       theme={{

@@ -3,11 +3,14 @@ import { useTheme } from "@mui/material";
 import { tokens } from "../theme";
 import { mockLineData as data } from "../data/mockData";
 
+//LineChart functional component that takes two optional props:
+//isCustomLineColors and isDashboard
 const LineChart = ({ isCustomLineColors = false, isDashboard = false }) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
   return (
+    //render the line chart
     <ResponsiveLine
       data={data}
       theme={{
@@ -43,7 +46,11 @@ const LineChart = ({ isCustomLineColors = false, isDashboard = false }) => {
           },
         },
       }}
-      colors={isDashboard ? { datum: "color" } : { scheme: "nivo" }} // added
+
+      //colors prop conditional if isDashboard is true, set the color of each data point
+      //according to its 'color' attribute
+      //else use 'nivo' color scheme
+      colors={isDashboard ? { datum: "color" } : { scheme: "nivo" }} 
       margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
       xScale={{ type: "point" }}
       yScale={{
